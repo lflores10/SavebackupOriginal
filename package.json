@@ -1,0 +1,61 @@
+{
+	"name": "savebackuporiginal",
+	"displayName": "saveBackupOriginal",
+	"description": "Backup file when you save.",
+	"version": "1.0.0",
+	"publisher": "luisflores10",
+	"tags": [
+		"save",
+		"backup",
+		"bak"
+	],
+	"icon": "saveBackup.png",
+	"repository": {
+		"type": "git",
+		"url": "\\192.168.100.23//Git_local//Savebackup.git"
+	},
+	"engines": {
+		"vscode": "^1.14.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.saveBackup.backupFile",
+				"title": "Backup File"
+			}
+		],
+		"configuration": {
+			"title": "Extension saveBackup",
+			"type": "object",
+			"properties": {
+				"saveBackup.conf.enable": {
+					"type": "boolean",
+					"description": "Automatically backup into BAK_DIR when save.",
+					"default": true
+				},
+				"saveBackup.conf.backupDir": {
+					"type": "string",
+					"description": "Dir path that backup to.",
+					"default": "${.vscode}/saveBackup"
+				},
+				"saveBackup.conf.fileNameMatch": {
+					"type": "string",
+					"description": "Regex for matching files to save enable",
+					"default": ".*"
+				}
+			}
+		}
+	},
+	"scripts": {},
+	"devDependencies": {},
+	"__metadata": {
+		"publisherDisplayName": "luisflores10"
+	}
+}
